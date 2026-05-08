@@ -38,7 +38,10 @@ export function useNews() {
       for (const category of NEWS_CATEGORIES) {
         try {
           // Try newsapi.org first
-          const url = `${NEWS_API_BASE}/top-headlines?category=${category}&language=en&pageSize=${NEWS_ARTICLES_PER_CATEGORY}&apiKey=${NEWS_API_KEY}`;
+          const isProd = import.meta.env.PROD;
+          const url = isProd
+            ? `/api/news?category=${category}&pageSize=${NEWS_ARTICLES_PER_CATEGORY}`
+            : `${NEWS_API_BASE}/top-headlines?category=${category}&language=en&pageSize=${NEWS_ARTICLES_PER_CATEGORY}&apiKey=${NEWS_API_KEY}`;
           const data = await fetchJSON(url);
 
           if (data.articles) {

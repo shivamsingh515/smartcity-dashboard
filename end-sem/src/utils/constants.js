@@ -1,7 +1,8 @@
 // API endpoints and configuration constants
+const isProd = import.meta.env.PROD;
 
-export const ISS_POSITION_URL = 'http://api.open-notify.org/iss-now.json';
-export const ISS_ASTROS_URL = 'http://api.open-notify.org/astros.json';
+export const ISS_POSITION_URL = isProd ? '/api/iss-position' : 'http://api.open-notify.org/iss-now.json';
+export const ISS_ASTROS_URL = isProd ? '/api/iss-astros' : 'http://api.open-notify.org/astros.json';
 export const NOMINATIM_REVERSE_URL = 'https://nominatim.openstreetmap.org/reverse';
 
 export const NEWS_API_BASE = 'https://newsapi.org/v2';
