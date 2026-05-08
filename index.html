@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartCity AI Citizen Dashboard</title>
+  
+  <!-- Fonts: Bebas Neue for headings, Inter for body/metadata -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Marquee / Ticker -->
+  <div class="marquee">
+    <div class="marquee-content">
+      SYSTEM ONLINE // LIVE CITY DATA // SYSTEM ONLINE // LIVE CITY DATA // SYSTEM ONLINE // LIVE CITY DATA // SYSTEM ONLINE // LIVE CITY DATA //
+    </div>
+  </div>
+
+  <div class="main-container">
+    
+    <!-- Hero Section -->
+    <header class="hero-section">
+      <div class="hero-text">
+        <h1>SMARTCITY</h1>
+        <h2>CITIZEN DASHBOARD</h2>
+      </div>
+      <div class="hero-meta">
+        <p>REAL-TIME DATA STREAM</p>
+        <p>AI ANALYTICS ENABLED</p>
+        <div class="status-indicator"></div>
+      </div>
+    </header>
+
+    <!-- Grid Showcase -->
+    <main class="modular-grid">
+      
+      <!-- Card 1: Weather -->
+      <article class="card card-weather">
+        <div class="card-header">
+          <span class="card-label">01 / WEATHER</span>
+          <button class="btn-refresh" onclick="fetchWeather()">REFRESH</button>
+        </div>
+        <div class="card-body">
+          <h2 id="weather-temp">--°C</h2>
+          <div class="card-meta">
+            <p>WIND: <span id="weather-wind">-- km/h</span></p>
+            <p>CODE: <span id="weather-code">--</span></p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Currency -->
+      <article class="card card-currency">
+        <div class="card-header">
+          <span class="card-label">02 / FOREX RATES</span>
+          <button class="btn-refresh" onclick="fetchCurrency()">REFRESH</button>
+        </div>
+        <div class="card-body">
+          <h2 class="sub-heading">INR BASE</h2>
+          <ul class="currency-list">
+            <li>USD: <span id="curr-usd">--</span></li>
+            <li>EUR: <span id="curr-eur">--</span></li>
+            <li>GBP: <span id="curr-gbp">--</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Card 3: Citizen Profile -->
+      <article class="card card-citizen">
+        <div class="card-header">
+          <span class="card-label">03 / FEATURED CITIZEN</span>
+          <button class="btn-refresh" onclick="fetchCitizen()">REFRESH</button>
+        </div>
+        <div class="card-body split-body">
+          <div class="image-box">
+            <img id="citizen-photo" src="https://via.placeholder.com/150" alt="Citizen Photo">
+          </div>
+          <div class="citizen-info">
+            <h2 id="citizen-name">-----</h2>
+            <p id="citizen-email">-----</p>
+            <p id="citizen-city">-----</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: City Fact -->
+      <article class="card card-fact">
+        <div class="card-header">
+          <span class="card-label">04 / CITY FACT</span>
+          <button class="btn-refresh" onclick="fetchFact()">REFRESH</button>
+        </div>
+        <div class="card-body">
+          <h2 class="fact-text" id="city-fact">Loading fact...</h2>
+        </div>
+      </article>
+
+    </main>
+
+  </div>
+
+  <!-- Brutalist Chatbot -->
+  <div class="chatbot-widget" id="chatbot">
+    <div class="chat-header" onclick="toggleChat()">
+      <span>AI ASSISTANT</span>
+      <span class="toggle-icon">[ + ]</span>
+    </div>
+    <div class="chat-body" id="chat-body" style="display: none;">
+      <div class="chat-messages" id="chat-messages">
+        <div class="message system">AI initialized. Reading dashboard data... Ask me anything about the visible data.</div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="chat-input" placeholder="Ask a question..." onkeypress="handleEnter(event)">
+        <button class="btn-send" onclick="sendMessage()">SEND</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
