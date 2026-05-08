@@ -1,0 +1,126 @@
+.news-title-section {
+  border-top: 2px solid var(--border-heavy);
+  border-bottom: 2px solid var(--border-heavy);
+  padding: var(--space-lg) var(--space-lg) var(--space-md) !important;
+}
+
+/* Controls bar */
+.news-controls {
+  padding: var(--space-md) var(--space-lg) !important;
+  border-bottom: var(--border);
+}
+
+.news-controls-inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.news-search-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.news-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+}
+
+.news-search {
+  padding-left: 36px !important;
+}
+
+.news-controls-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* News cards */
+.news-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.news-card-featured .news-card-image-wrapper {
+  height: 220px;
+}
+
+.news-card-image-wrapper {
+  height: 160px;
+  overflow: hidden;
+  border-bottom: var(--border);
+  margin: calc(-1 * var(--space-lg));
+  margin-bottom: var(--space-md);
+}
+
+.news-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.news-card:hover .news-card-image {
+  transform: scale(1.05);
+}
+
+.news-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.news-card-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+.news-card-category {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background: var(--accent-lime);
+  color: #111;
+  padding: 2px 8px;
+  display: inline-block;
+}
+
+.news-card-desc {
+  flex: 1;
+  margin-bottom: var(--space-md);
+}
+
+.news-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  border-top: var(--border);
+}
+
+.news-card-source {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .news-controls-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .news-controls-right {
+    justify-content: flex-start;
+  }
+}

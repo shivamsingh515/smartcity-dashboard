@@ -1,0 +1,143 @@
+.header {
+  border-bottom: 2px solid var(--border-heavy);
+  padding: 0 var(--space-lg) !important;
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  background: var(--bg-primary);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header-logo {
+  width: 36px;
+  height: 36px;
+  background: var(--accent-lime);
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #111;
+}
+
+.header-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  line-height: 1;
+}
+
+.header-subtitle {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.header-nav {
+  display: flex;
+  gap: var(--space-xl);
+}
+
+.header-link {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header-link-num {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  color: var(--accent-lime);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.header-link:hover .header-link-num {
+  opacity: 1;
+}
+
+.header-link:hover {
+  color: var(--text-primary);
+}
+
+.header-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-lime);
+  transition: width var(--transition-base);
+}
+
+.header-link:hover::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.header-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: var(--space-md);
+  border-right: var(--border);
+}
+
+.header-theme-btn {
+  transition: all var(--transition-fast);
+}
+
+.header-theme-btn:hover {
+  background: var(--accent-lime) !important;
+  color: #111 !important;
+  border-color: var(--accent-lime) !important;
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+
+  .header-subtitle {
+    display: none;
+  }
+
+  .header-status {
+    display: none;
+  }
+}

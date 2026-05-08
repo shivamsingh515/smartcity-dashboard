@@ -1,0 +1,29 @@
+.chart-container {
+  width: 100%;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: var(--border);
+}
+
+.chart-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+/* Charts section header */
+.charts-title-section {
+  border-top: 2px solid var(--border-heavy);
+  border-bottom: 2px solid var(--border-heavy);
+  padding: var(--space-lg) var(--space-lg) var(--space-md) !important;
+}
